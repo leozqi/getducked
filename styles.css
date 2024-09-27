@@ -1,20 +1,26 @@
 :root {
-	--bg-color: #fff;
+	--bg-color: #fff1e7;
 	--fg-color: #000;
 	--accent-color: #c0c0c0;
 	font-family: Arial, sans-serif;
 }
 
 html {
+	background-color: var(--bg-color);
 	height: 100%;
 	width: 100%;
 }
 
 body {
+	overflow: hidden;
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	padding: 0;
+}
+
+.framed {
+	border: 10px solid brown;
 }
 
 #audio-indic {
@@ -41,8 +47,19 @@ body {
 	bottom: 0;
 	left: 0;
 	padding: 5px;
+	display: flex;
+	font-size: 8pt;
 }
 
 a {
 	color: var(--accent-color);
+}
+
+.profile {
+	margin: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
 }

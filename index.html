@@ -4,6 +4,7 @@
     <title>get ducked</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./favicon.png">
     <!-- TODO: vendor this in our repo -->
     <script src="https://unpkg.com/wavesurfer.js@7"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.min.js"></script>
@@ -11,14 +12,17 @@
 <body>
   <div id="audio-indic">
     <!-- User sound will be displayed here -->
+    <!-- Before closing the webpage give you all the recorded mic data -->
+    <!-- also add the quacking sound -->
   </div>
   <div id="duck">
-    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+    <canvas id="cad-viewer"></canvas>
   </div>
   <div id="footnote">
-    <a href="/about">we don't actually collect your information, yo"</a>
-    <br>
-    <p>- Leo and Ally</p>
+    <a href="https://github.com/leozqi"><img class="profile" src="./assets/leozqi.jpeg" alt="Leozqi's profile picture"/></a>
+    <p>+</p>
+    <a href="https://github.com/allypara"><img class="profile" src="./assets/allypara.png" alt="Ally's profile picture"/></a>
+    <p>like ducks</p>
   </div>
   <script>
       let wavesurfer = WaveSurfer.create({
@@ -44,5 +48,6 @@
 
       record.startMic({deviceId});
   </script>
+  <script type="module" src="quack.js"></script>
 </body>
 </html>

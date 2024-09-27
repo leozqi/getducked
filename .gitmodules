@@ -1,0 +1,3 @@
+[submodule "vendor/picocad-web-viewer"]
+	path = vendor/picocad-web-viewer
+	url = https://github.com/lucatronica/picocad-web-viewer.git
