@@ -22,7 +22,7 @@
     <a href="https://github.com/leozqi"><img class="profile" src="./assets/leozqi.jpeg" alt="Leozqi's profile picture"/></a>
     <p>+</p>
     <a href="https://github.com/allypara"><img class="profile" src="./assets/allypara.png" alt="Ally's profile picture"/></a>
-    <p>like ducks ... we don't keep any data</p>
+    <p>are just winging it ;)</p>
   </div>
   <script>
       let wavesurfer = WaveSurfer.create({
@@ -47,6 +47,13 @@
       });
 
       record.startMic({deviceId});
+
+      setInterval(() => {
+        if (Math.random() < 0.1) {
+          const quack = new Audio('./assets/quack.mp3');
+          quack.play();
+        }
+      }, 1000);
   </script>
   <script type="module" src="quack.js"></script>
 </body>
