@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>get ducked</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <!-- TODO: vendor this in our repo -->
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.min.js"></script>
+</head>
+<body>
+  <div id="audio-indic">
+    <!-- User sound will be displayed here -->
+  </div>
+  <div id="duck">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+  </div>
+  <div id="footnote">
+    <a href="/about">we don't actually collect your information, yo"</a>
+    <br>
+    <p>- Leo and Ally</p>
+  </div>
+  <script>
+      let wavesurfer = WaveSurfer.create({
+        container: '#audio-indic',
+        waveColor: '#c0c0c0',
+        progressColor: 'a9a9a9',
+        barWidth: 1,
+        barHeight: 0.5,
+        interact: false,
+        mediaControls: false
+      });
+
+      let scrollingWaveform = true;
+
+      // Initialize the Record plugin
+      let record = wavesurfer.registerPlugin(
+        WaveSurfer.Record.create({ scrollingWaveform, renderRecordedAudio: false })
+      );
+
+      const deviceId = WaveSurfer.Record.getAvailableAudioDevices().then((devices) => {
+        return devices[0].deviceId;
+      });
+
+      record.startMic({deviceId});
+  </script>
+</body>
+</html>
